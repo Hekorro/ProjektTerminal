@@ -9,11 +9,23 @@ public class Center {
 	private LinkedList<Date> logDataList = new LinkedList<Date>();
 	private LinkedList<Firm> firmList = new LinkedList<Firm>();
 	
-	public void addBank(Bank bank) {}
-	public void addFirm(Firm firm) {}
+	public void addBank(String bankName) {
+		Bank bank=new Bank(bankName);
+		bankList.add(bank);
+	}
+	public void addFirm(String firmName) {
+		Firm firm = new Firm(firmName);
+		firmList.add(firm);
+	}
 	public void addToLogBase(Card card, double amount, Date date) {}
-	public void deleteBank(Bank bank) {}
-	public void deleteFirm(Firm firm) {}
+	public void deleteBank(Bank bank) {
+		bankList.remove(bank);
+		bank=null;
+	}
+	public void deleteFirm(Firm firm) {
+		firmList.remove(firm);
+		firm=null;
+	}
 	public List<Bank> getBanks(){
 		return bankList;
 	}

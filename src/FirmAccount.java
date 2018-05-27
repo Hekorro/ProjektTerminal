@@ -1,4 +1,4 @@
-
+//zastanowic sie jak w klasie Card i FirmACCOUNT ogarnac zmienna bank ("zaimportowac")
 public class FirmAccount {
 
 	FirmAccount(){}
@@ -9,20 +9,22 @@ public class FirmAccount {
 private Firm firm;
 private double balance;
 private Bank bank;
+public Bank getBank() {
+	return bank;
+}
+
 private int accountNumber;
 
 	public double getBalance() {
-		return this.balance;
+		return balance;
 	}
 	public Firm getFirm()
 	{
-		return this.firm;
+		return firm;
 	}
-	public Bank getBank() {
-		return this.bank;
-	}
+
 	public int getAccountNumber() {
-		return this.accountNumber;
+		return accountNumber;
 	}
 	public void payIn(double amount) {}
 	

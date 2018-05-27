@@ -2,7 +2,14 @@
 public class Card {
 
 	Card(){}
-	Card(Person person){}
+	Card(Person person){
+		this.person=person;
+		int a=0;
+		a=bank.generateCardNumber();
+		this.cardNumber=a;
+		this.balance=0;
+			
+	}
 	
 	private int cardNumber;
 	private double balance;
@@ -11,21 +18,27 @@ public class Card {
 	
 	public int getCardNumber()
 	{
-		return this.cardNumber;
+		return cardNumber;
 	}
 	public Person getPerson()
 	{
-		return this.person;
+		return person;
 	}
 	public Bank getBank()
 	{
-		return this.bank;
+		return bank;
 	}
 	public double getBalance()
 	{
-		return this.balance;
+		return balance;
 	}
-	public void payIn(double amount) {}
-	public void withdraw(double amount) {}
+	public void payIn(double amount) {
+		balance+=amount;
+	}
+//trzeba stworzyc obsluge wyjatkow dla amount<0 i balance<0
+	public void withdraw(double amount) {
+		balance-=amount;
+		
+	}
 	
 }
