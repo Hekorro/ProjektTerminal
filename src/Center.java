@@ -10,8 +10,8 @@ public class Center {
 	private LinkedList<Firm> firmList = new LinkedList<Firm>();
 	
 	public void addBank(String name) {
-		Bank bank = new Bank(name)
-				bankList.add(bank)
+		Bank bank = new Bank(name); //kurwa kurwa
+				bankList.add(bank); 
 		}
 	public void addFirm(String name) {}
 	public void addToLogBase(Card card, double amount, Date date) {}
