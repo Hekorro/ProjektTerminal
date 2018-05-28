@@ -32,6 +32,7 @@ private LinkedList<Integer> cardNumberList = new LinkedList<Integer>();
 		return cardList;
 	}
 //trzeba pomyslec jak rozwiazac sprawe numerow kart w kilku bankach
+<<<<<<< HEAD
 	public void addPersonsCard(Person person) {
 		Card card = new Card(person);
 		cardList.add(card);
@@ -42,13 +43,26 @@ private LinkedList<Integer> cardNumberList = new LinkedList<Integer>();
 	public void addPerson(Person person) {}
 	
 	public void addFirmAccount(Firm firm, Bank bank) {}
+=======
+	public void addPersonCard(Person person) {
+		Card card = new Card(person,generateCardNumber());
+		cardList.add(card);
+	}
+	
+	public void addPerson(Person person) {}
+
+>>>>>>> 958b03f0f677ff1c0604402198589d5d60b5f496
 	public void addPerson(String firstName,String secondName) {
 		Person person = new Person(firstName,secondName);
 		personsList.add(person);
 	}
 
+<<<<<<< HEAD
+=======
+	
+>>>>>>> 958b03f0f677ff1c0604402198589d5d60b5f496
 	public void addFirmAccount(Firm firm) {
-		FirmAccount firmAccount = new FirmAccount(firm);
+		FirmAccount firmAccount = new FirmAccount(firm, generateCardNumber()); //sprawdz czy bank bedzie potrzebny
 		firmAccountsList.add(firmAccount);
 	}
 	
