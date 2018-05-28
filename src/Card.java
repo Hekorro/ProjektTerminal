@@ -1,7 +1,5 @@
 
 public class Card {
-<<<<<<< HEAD
-=======
 
 	Card(){}
 	Card(Person person){
@@ -12,17 +10,13 @@ public class Card {
 		this.balance=0;
 			
 	}
->>>>>>> 1ca712f1b6340262b752608dde38e98ef4424d85
-	
+
 	private int cardNumber;
 	private double balance;
 	private Bank bank;
 	private Person person;
 	
-	Card(){}
-	Card(Person person){
-		this.person = person;
-	}
+
 	
 	public int getCardNumber()
 	{
@@ -48,16 +42,6 @@ public class Card {
 		balance-=amount;
 		
 	}
-<<<<<<< HEAD
-	public void payIn(double amount) {
-		this.balance = this.balance + amount;
-		return;
-	}
-	public void withdraw(double amount) {
-		this.balance = this.balance - amount;
-		return;
-	}
-=======
->>>>>>> 1ca712f1b6340262b752608dde38e98ef4424d85
-	
+
+
 }
