@@ -11,6 +11,7 @@ public class Center {
 	
 	public void addBank(String name) {
 		Bank bank = new Bank(name)
+				bankList.add(bank)
 		}
 	public void addFirm(String name) {}
 	public void addToLogBase(Card card, double amount, Date date) {}
