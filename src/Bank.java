@@ -32,7 +32,7 @@ private LinkedList<Card> cardList = new LinkedList<Card>();
 	
 	public void addPerson(Person person) {}
 	
-	public void addFirmAccount(FirmAccount firmAccount) {}
+	public void addFirmAccount(Firm firm, Bank bank) {}
 	
 	public void deletePerson(Person person) {}
 	

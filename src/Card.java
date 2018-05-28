@@ -1,13 +1,15 @@
 
 public class Card {
-
-	Card(){}
-	Card(Person person){}
 	
 	private int cardNumber;
 	private double balance;
 	private Bank bank;
 	private Person person;
+	
+	Card(){}
+	Card(Person person){
+		this.person = person;
+	}
 	
 	public int getCardNumber()
 	{
@@ -25,7 +27,13 @@ public class Card {
 	{
 		return this.balance;
 	}
-	public void payIn(double amount) {}
-	public void withdraw(double amount) {}
+	public void payIn(double amount) {
+		this.balance = this.balance + amount;
+		return;
+	}
+	public void withdraw(double amount) {
+		this.balance = this.balance - amount;
+		return;
+	}
 	
 }
