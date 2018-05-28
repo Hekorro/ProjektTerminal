@@ -1,5 +1,18 @@
 
 public class Card {
+<<<<<<< HEAD
+=======
+
+	Card(){}
+	Card(Person person){
+		this.person=person;
+		int a=0;
+		a=bank.generateCardNumber();
+		this.cardNumber=a;
+		this.balance=0;
+			
+	}
+>>>>>>> 1ca712f1b6340262b752608dde38e98ef4424d85
 	
 	private int cardNumber;
 	private double balance;
@@ -13,20 +26,29 @@ public class Card {
 	
 	public int getCardNumber()
 	{
-		return this.cardNumber;
+		return cardNumber;
 	}
 	public Person getPerson()
 	{
-		return this.person;
+		return person;
 	}
 	public Bank getBank()
 	{
-		return this.bank;
+		return bank;
 	}
 	public double getBalance()
 	{
-		return this.balance;
+		return balance;
 	}
+	public void payIn(double amount) {
+		balance+=amount;
+	}
+//trzeba stworzyc obsluge wyjatkow dla amount<0 i balance<0
+	public void withdraw(double amount) {
+		balance-=amount;
+		
+	}
+<<<<<<< HEAD
 	public void payIn(double amount) {
 		this.balance = this.balance + amount;
 		return;
@@ -35,5 +57,7 @@ public class Card {
 		this.balance = this.balance - amount;
 		return;
 	}
+=======
+>>>>>>> 1ca712f1b6340262b752608dde38e98ef4424d85
 	
 }

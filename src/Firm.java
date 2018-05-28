@@ -14,7 +14,7 @@ public class Firm {
 	
 	public void callAutorization(Card card, double amount) {
 	}
-	public void callAutorization(FirmAccount firmAccount) {
+	public void callAutorization(FirmAccount firmAccount,double amount) {
 	}
 	public List<Bank> getBanks()
 	{

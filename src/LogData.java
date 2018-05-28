@@ -10,11 +10,11 @@ public class LogData {
 
 public Firm getFirm()
 {
-	return this.firm;
+	return firm;
 }
 public Bank getBank()
 {
-	return this.bank;
+	return bank;
 }
 public int getCardNumber()
 {
@@ -22,15 +22,15 @@ public int getCardNumber()
 }
 public Person getOwner()
 {
-	return this.owner;
+	return owner;
 }
 public double getAmount()
 {
-	return this.amount;
+	return amount;
 }
 public Date getDate()
 {
-	return this.date;
+	return date;
 }
 
 }
