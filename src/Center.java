@@ -6,21 +6,27 @@ public class Center {
 	Center(){}
 	
 	private LinkedList<Bank> bankList = new LinkedList<Bank>();
-	private LinkedList<Date> logDataList = new LinkedList<Date>();
+	private LinkedList<LogData> logDataList = new LinkedList<LogData>();
 	private LinkedList<Firm> firmList = new LinkedList<Firm>();
 	
 	public void addBank(String name) {
-		Bank bank = new Bank(name); //kurwa kurwa
+		Bank bank = new Bank(name); 
 				bankList.add(bank); 
 		}
-	public void addFirm(String name) {}
-	public void addToLogBase(Card card, double amount, Date date) {}
+	public void addFirm(String name) {
+		Firm firm = new Firm(name);
+		firmList.add(firm);
+		}
+	public void addToLogBase(Card card, double amount, Date date, Firm firm) {
+		LogData log=new LogData(card, amount, date, firm);
+		logDataList.add(log);
+	}
 	public void deleteBank(Bank bank) {}
 	public void deleteFirm(Firm firm) {}
 	public List<Bank> getBanks(){
 		return bankList;
 	}
-	public List<Date> getLogData(){
+	public List<LogData> getLogData(){
 		return logDataList;
 	}
 	//autorize do przerobienia
