@@ -31,24 +31,78 @@ private LinkedList<Integer> cardNumberList = new LinkedList<Integer>();
 	{
 		return cardList;
 	}
-//trzeba pomyslec jak rozwiazac sprawe numerow kart w kilku bankach
-	public void addPersonsCard(Person person) {
-		Card card = new Card(person);
+//trzeba pomyslec jak rozwiazac sprawe numerow kart w kilku bankach i sprawdziæ czy osoba istnieje
+	public void addPersonsCard(Person person,Center center) {
+		
+		boolean check=false;
+		boolean general_check=false;
+		int person_number=0;
+		LinkedList<Bank> banks = new LinkedList<Bank>();
+		banks=center.getBanks();
+		Random random = new Random();
+		do {
+			int a = random.nextInt(90000)+10000;
+		do {	
+		for(Bank banktest:banks)
+		do {
+		{
+		for(int b:banktest.getCardNumberList())	
+		{
+			if(a!=b)
+				check = true;
+				else check = false;
+				person_number=a;
+		}
+		}
+		}while(check!=false);
+		}while(check!=false);
+		}while(check!=true);
+		
+		Card card  = new Card(person,person_number);
 		cardList.add(card);
+		for(Bank banktest:banks) {
+			banktest=null;
+		}
+		
+		
 	}
+
 	
-	public void addPersonCard(Person person) {}
 	
-	public void addPerson(Person person) {}
-	
-	public void addFirmAccount(Firm firm, Bank bank) {}
-	public void addPerson(String firstName,String secondName) {
-		Person person = new Person(firstName,secondName);
+	public void addPerson(Person person) {
 		personsList.add(person);
 	}
 
-	public void addFirmAccount(Firm firm) {
-		FirmAccount firmAccount = new FirmAccount(firm);
+	public void addFirmAccount(Firm firm,Center center) {
+		boolean check=false;
+		boolean general_check=false;
+		int person_number=0;
+		LinkedList<Bank> banks = new LinkedList<Bank>();
+		banks=center.getBanks();
+		Random random = new Random();
+		do {
+			int a = random.nextInt(90000)+10000;
+		do {	
+		for(Bank banktest:banks)
+		do {
+		{
+		for(int b:banktest.getCardNumberList())	
+		{
+			if(a!=b)
+				check = true;
+				else check = false;
+				person_number=a;
+		}
+		}
+		}while(check!=false);
+		}while(check!=false);
+		}while(check!=true);
+		
+		FirmAccount firmAccount  = new FirmAccount(firm,person_number);
+		firmAccountsList.add(firmAccount);
+		for(Bank banktest:banks) {
+			banktest=null;
+		}
 		firmAccountsList.add(firmAccount);
 	}
 	
@@ -69,34 +123,28 @@ private LinkedList<Integer> cardNumberList = new LinkedList<Integer>();
 	//klasa confirmAutorization do glebszego przetworzenia
 	public boolean confirmAutorization(Card card, double amount)
 	{
-		return true;
+		if(card.withdraw(amount)==false)
+		{
+			return false;
+		}
+		else
+		{
+			card.withdraw(amount);
+			return true;
+		}
+		
 	}
 	
 	//podobnie klasa confirmAutorization
-	public boolean confirmAutorization(FirmAccount firmAccount,double amount)
+	public boolean confirmAutorization(Card card,FirmAccount firmAccount,double amount)
 	{
-		return true;
-	}
-	public boolean checkCardNumber(int x)
-	{
-		for(int x1:cardNumberList)
+		if(card.pay(amount, firmAccount)==true)
 		{
-			if(x1==x)
-			{
-				return false;
-			}
+		return true;
 		}
-		return true;
+		else return false;
+		
 	}
-	public int generateCardNumber()
-	{
-		Random random = new Random();
-		int a=0;
-		do
-		{
-			a = random.nextInt(500000)+100000;
-		}while(checkCardNumber(a)==true);
-		return a;
-	}
+
 		
 }

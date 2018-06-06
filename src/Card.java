@@ -1,67 +1,65 @@
 
 public class Card {
-<<<<<<< HEAD
 
 	Card(){}
-	Card(Person person){
+	Card(Person person,int number){
 		this.person=person;
-		int a=0;
-		a=bank.generateCardNumber();
-		this.cardNumber=a;
+		this.cardNumber=number;
 		this.balance=0;
 			
 	}
 
-=======
-	
->>>>>>> 958b03f0f677ff1c0604402198589d5d60b5f496
 	private int cardNumber;
 	private double balance;
-	private Bank bank; // ???
+	private Bank bank;
 	private Person person;
 	
-<<<<<<< HEAD
 
-=======
-	Card(){}
-	Card(Person person, int number){
-		this.person = person;
-		this.cardNumber = number;
-		this.balance = 0;
-	}
->>>>>>> 958b03f0f677ff1c0604402198589d5d60b5f496
 	
 	public int getCardNumber()
 	{
-		return this.cardNumber;
+		return cardNumber;
 	}
 	public Person getPerson()
 	{
-		return this.person;
+		return person;
 	}
 	public Bank getBank()
 	{
-		return this.bank;
+		return bank;
 	}
 	public double getBalance()
 	{
-		return this.balance;
+		return balance;
 	}
-	public void payIn(double amount) {
-		this.balance+=amount;
+	public void payIn(double amount)
+	{
+		balance+=amount;
+	}
+	public boolean pay(double amount,FirmAccount firmAccount) {
+		if(balance-amount>0)
+		{
+		balance-=amount;
+		firmAccount.payIn(amount);
+		return true;
+		}
+		else return false;
+		
 	}
 //trzeba stworzyc obsluge wyjatkow dla amount<0 i balance<0
-	public void withdraw(double amount) {
-<<<<<<< HEAD
+	public boolean withdraw(double amount) {
+		if(balance-amount>0)
+		{
 		balance-=amount;
+		return true;
+		}
+		else
+		{
+			System.out.println("Brak wystarczajacych srodkow na koncie");
+			return false;
+		}
 		
 	}
 
 
-=======
-		this.balance-=amount;
-	}
-
-	
->>>>>>> 958b03f0f677ff1c0604402198589d5d60b5f496
 }

@@ -12,9 +12,11 @@ public class Firm {
 	private LinkedList<Bank> bankList = new LinkedList<Bank>();
 	private LinkedList<FirmAccount> firmAccountsList = new LinkedList<FirmAccount>();
 	
-	public void callAutorization(Card card, double amount) {
+	public boolean callAutorization(Card card, double amount,Center center) {
+		return center.autorize(card, amount);
 	}
-	public void callAutorization(FirmAccount firmAccount,double amount) {
+	public boolean callAutorization(Card card,FirmAccount firmAccount,double amount,Center center) {
+		return center.autorize(card, firmAccount, amount);
 	}
 	public List<Bank> getBanks()
 	{

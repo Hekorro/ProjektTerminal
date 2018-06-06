@@ -26,7 +26,7 @@ public class Center {
 		firmList.remove(firm);
 		firm=null;
 	}
-	public List<Bank> getBanks(){
+	public LinkedList<Bank> getBanks(){
 		return bankList;
 	}
 	public List<Date> getLogData(){
@@ -34,10 +34,12 @@ public class Center {
 	}
 	//autorize do przerobienia
 	public boolean autorize(Card card, double amount) {
-		return true;
+		Bank bankToAutorize = card.getBank();
+		return bankToAutorize.confirmAutorization(card, amount);
 	}
-	public boolean autorize(FirmAccount firmAccount,double amount) {
-		return true;
+	public boolean autorize(Card card,FirmAccount firmAccount,double amount) {
+		Bank bankToAutorize = card.getBank();
+		return bankToAutorize.confirmAutorization(card, firmAccount, amount);
 	}
 	public void search(LogData logData, String string) {}
 	public void browseBank() {}
