@@ -3,10 +3,14 @@ import java.util.*;
 public class Bank {
 
 	Bank(){}
-	Bank(String bankName){
+	Bank(String bankName,Center center){
 		this.bankName=bankName;
+		this.serialNumber=center.getBankSerialNumber();
+		
 	}
 	
+int serialNumber;
+int cardNumber=1;
 private String bankName;
 private LinkedList<FirmAccount> firmAccountsList = new LinkedList<FirmAccount>();
 private LinkedList<Person> personsList = new LinkedList<Person>();
@@ -34,38 +38,12 @@ private LinkedList<Integer> cardNumberList = new LinkedList<Integer>();
 //trzeba pomyslec jak rozwiazac sprawe numerow kart w kilku bankach i sprawdziæ czy osoba istnieje
 	public void addPersonsCard(Person person,Center center) {
 		
-		boolean check=false;
-		int person_number=0;
-		LinkedList<Bank> banks = new LinkedList<Bank>();
-		banks=center.getBanks();
-		Random random = new Random();
-		do {
-			int a = random.nextInt(90000)+10000;
-			System.out.print(a);	
-		for(Bank banktest:banks)
-		{
-		for(int b:banktest.getCardNumberList())	
-		{
-			if(a!=b)
-				check = true;
-				else {
-					check = false;
-					break;
-				}
-		if(check==false) break;
-		}
-		
-		}
-		}while(check==true);
-		
+		int person_number=serialNumber*10000+cardNumber;
 		Card card  = new Card(person,person_number);
 		cardList.add(card);
-		for(Bank banktest:banks) {
-			banktest=null;
+		cardNumber++;
 		}
 		
-		
-	}
 
 	
 	
@@ -74,35 +52,11 @@ private LinkedList<Integer> cardNumberList = new LinkedList<Integer>();
 	}
 
 	public void addFirmAccount(Firm firm,Center center) {
-		boolean check=false;
-		boolean general_check=false;
-		int person_number=0;
-		LinkedList<Bank> banks = new LinkedList<Bank>();
-		banks=center.getBanks();
-		Random random = new Random();
-		do {
-			int a = random.nextInt(90000)+10000;
-		do {	
-		for(Bank banktest:banks)
-		do {
-		for(int b:banktest.getCardNumberList())	
-		{
-			if(a!=b)
-				check = true;
-				else check = false;
-				person_number=a;
-		}
-		}while(check==false);
-		}while(check==false);
-		}while(check==true);
-		
+		int person_number=serialNumber*10000+cardNumber;
 		FirmAccount firmAccount  = new FirmAccount(firm,person_number);
 		firmAccountsList.add(firmAccount);
-		for(Bank banktest:banks) {
-			banktest=null;
+		cardNumber++;
 		}
-		firmAccountsList.add(firmAccount);
-	}
 	
 	public void deletePerson(Person person) {
 		personsList.remove(person);

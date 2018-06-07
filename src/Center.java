@@ -5,16 +5,22 @@ public class Center {
 
 	Center(){}
 	
-	private LinkedList<Bank> bankList = new LinkedList<Bank>();
+	private ArrayList<Bank> bankList = new ArrayList<Bank>(9);
 	private LinkedList<Date> logDataList = new LinkedList<Date>();
 	private LinkedList<Firm> firmList = new LinkedList<Firm>();
+	int bankSerialNumber=1;
 	
-	public void addBank(String bankName) {
-		Bank bank=new Bank(bankName);
-		bankList.add(bank);
+	
+	
+	public int getBankSerialNumber() {
+		return bankSerialNumber;
 	}
-	public void addFirm(String firmName) {
-		Firm firm = new Firm(firmName);
+
+	public void addBank(Bank bank) {
+		bankList.add(bank);
+		bankSerialNumber++;
+	}
+	public void addFirm(Firm firm) {
 		firmList.add(firm);
 	}
 	public void addToLogBase(Card card, double amount, Date date) {}
@@ -26,7 +32,7 @@ public class Center {
 		firmList.remove(firm);
 		firm=null;
 	}
-	public LinkedList<Bank> getBanks(){
+	public ArrayList<Bank> getBanks(){
 		return bankList;
 	}
 	public List<Date> getLogData(){
@@ -42,7 +48,19 @@ public class Center {
 		return bankToAutorize.confirmAutorization(card, firmAccount, amount);
 	}
 	public void search(LogData logData, String string) {}
-	public void browseBank() {}
-	public void browseFirm() {}
+	public void browseBank() {
+		for(Bank bank:bankList)
+		{
+			System.out.println(bank.toString());
+		}
+	}
+	public void browseFirm() {
+		{
+			for(Firm firm:firmList)
+			{
+				System.out.println(firm.toString());
+			}
+		}
+	}
 	
 }
