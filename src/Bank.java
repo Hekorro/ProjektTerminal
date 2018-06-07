@@ -12,12 +12,19 @@ public class Bank {
 int serialNumber;
 int cardNumber=1;
 private String bankName;
+
+
 private LinkedList<FirmAccount> firmAccountsList = new LinkedList<FirmAccount>();
 private LinkedList<Person> personsList = new LinkedList<Person>();
 private LinkedList<Card> cardList = new LinkedList<Card>();
 private LinkedList<Integer> cardNumberList = new LinkedList<Integer>();
 
 	
+	
+	public String getBankName() {
+	return bankName;
+}
+
 	public List<Integer> getCardNumberList() {
 	return cardNumberList;
 }

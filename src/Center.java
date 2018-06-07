@@ -51,14 +51,14 @@ public class Center {
 	public void browseBank() {
 		for(Bank bank:bankList)
 		{
-			System.out.println(bank.toString());
+			System.out.println(bank.getBankName());
 		}
 	}
 	public void browseFirm() {
 		{
 			for(Firm firm:firmList)
 			{
-				System.out.println(firm.toString());
+				System.out.println(firm.getFirmName());
 			}
 		}
 	}
