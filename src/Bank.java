@@ -10,7 +10,11 @@ public class Bank {
 	}
 	
 int serialNumber;
+
+
 int cardNumber=1;
+
+
 private String bankName;
 
 
@@ -21,6 +25,14 @@ private LinkedList<Integer> cardNumberList = new LinkedList<Integer>();
 
 	
 	
+	public int getSerialNumber() {
+	return serialNumber;
+}
+	public int getCardNumber() {
+		return cardNumber;
+	}
+	
+
 	public String getBankName() {
 	return bankName;
 }
@@ -43,10 +55,8 @@ private LinkedList<Integer> cardNumberList = new LinkedList<Integer>();
 		return cardList;
 	}
 //trzeba pomyslec jak rozwiazac sprawe numerow kart w kilku bankach i sprawdziæ czy osoba istnieje
-	public void addPersonsCard(Person person,Center center) {
+	public void addPersonsCard(Card card,Center center) {
 		
-		int person_number=serialNumber*10000+cardNumber;
-		Card card  = new Card(person,person_number);
 		cardList.add(card);
 		cardNumber++;
 		}
@@ -58,9 +68,7 @@ private LinkedList<Integer> cardNumberList = new LinkedList<Integer>();
 		personsList.add(person);
 	}
 
-	public void addFirmAccount(Firm firm,Center center) {
-		int person_number=serialNumber*10000+cardNumber;
-		FirmAccount firmAccount  = new FirmAccount(firm,person_number);
+	public void addFirmAccount(FirmAccount firmAccount,Center center) {
 		firmAccountsList.add(firmAccount);
 		cardNumber++;
 		}

@@ -10,10 +10,13 @@ public class FirmAccount {
 	FirmAccount(){}
 
 
-	FirmAccount(Firm firm, int number){
-		this.firm = firm;
-		this.balance = 0;
-		this.accountNumber = number;
+	FirmAccount(Firm firm, Bank bank){
+			int x=bank.getSerialNumber();
+			int y=bank.getCardNumber();
+			int z=x*10000;
+			this.accountNumber=z+y;
+			this.balance=0;
+			this.firm = firm;
 	}
 
 	public double getBalance() {

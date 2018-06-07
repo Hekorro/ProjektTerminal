@@ -18,9 +18,9 @@ public class Main {
 		String name2=scanner.nextLine();
 		Person person=new Person(name,name2);
 		bank.addPerson(person);
-		bank.addPersonsCard(person, center);
-		center.browseBank();
-		center.browseFirm();
+		Card card = new Card(person,bank2);
+		bank.addPersonsCard(card, center);
+		
 		}
 
 }

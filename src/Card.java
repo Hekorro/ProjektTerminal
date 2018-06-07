@@ -2,10 +2,14 @@
 public class Card {
 
 	Card(){}
-	Card(Person person,int number){
+	Card(Person person,Bank bank){
+		int x=bank.getSerialNumber();
+		int y=bank.getCardNumber();
+		int z=x*10000;
 		this.person=person;
-		this.cardNumber=number;
+		this.cardNumber=z+y;
 		this.balance=0;
+		
 			
 	}
 
