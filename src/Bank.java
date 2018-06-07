@@ -35,28 +35,28 @@ private LinkedList<Integer> cardNumberList = new LinkedList<Integer>();
 	public void addPersonsCard(Person person,Center center) {
 		
 		boolean check=false;
-		boolean general_check=false;
 		int person_number=0;
 		LinkedList<Bank> banks = new LinkedList<Bank>();
 		banks=center.getBanks();
 		Random random = new Random();
 		do {
 			int a = random.nextInt(90000)+10000;
-		do {	
+			System.out.print(a);	
 		for(Bank banktest:banks)
-		do {
 		{
 		for(int b:banktest.getCardNumberList())	
 		{
 			if(a!=b)
 				check = true;
-				else check = false;
-				person_number=a;
+				else {
+					check = false;
+					break;
+				}
+		if(check==false) break;
 		}
+		
 		}
-		}while(check!=false);
-		}while(check!=false);
-		}while(check!=true);
+		}while(check==true);
 		
 		Card card  = new Card(person,person_number);
 		cardList.add(card);
@@ -85,7 +85,6 @@ private LinkedList<Integer> cardNumberList = new LinkedList<Integer>();
 		do {	
 		for(Bank banktest:banks)
 		do {
-		{
 		for(int b:banktest.getCardNumberList())	
 		{
 			if(a!=b)
@@ -93,10 +92,9 @@ private LinkedList<Integer> cardNumberList = new LinkedList<Integer>();
 				else check = false;
 				person_number=a;
 		}
-		}
-		}while(check!=false);
-		}while(check!=false);
-		}while(check!=true);
+		}while(check==false);
+		}while(check==false);
+		}while(check==true);
 		
 		FirmAccount firmAccount  = new FirmAccount(firm,person_number);
 		firmAccountsList.add(firmAccount);
