@@ -1,5 +1,5 @@
 import java.util.*;
-
+//asdasdasdasdasdasdasdasdasd
 public class Bank {
 
 	Bank(){}
@@ -55,7 +55,7 @@ private LinkedList<Integer> cardNumberList = new LinkedList<Integer>();
 		return cardList;
 	}
 //trzeba pomyslec jak rozwiazac sprawe numerow kart w kilku bankach i sprawdziæ czy osoba istnieje
-	public void addPersonsCard(Card card,Center center) {
+	public void addPersonsCard(Card card) {
 		
 		cardList.add(card);
 		cardNumber++;
@@ -68,7 +68,7 @@ private LinkedList<Integer> cardNumberList = new LinkedList<Integer>();
 		personsList.add(person);
 	}
 
-	public void addFirmAccount(FirmAccount firmAccount,Center center) {
+	public void addFirmAccount(FirmAccount firmAccount) {
 		firmAccountsList.add(firmAccount);
 		cardNumber++;
 		}
