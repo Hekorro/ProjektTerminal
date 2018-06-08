@@ -10,8 +10,7 @@ public class Center {
 	private LinkedList<Firm> firmList = new LinkedList<Firm>();
 	int bankSerialNumber=1;
 	
-	
-	
+
 	public int getBankSerialNumber() {
 		return bankSerialNumber;
 	}

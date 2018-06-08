@@ -17,6 +17,7 @@ public class FirmAccount {
 			this.accountNumber=z+y;
 			this.balance=0;
 			this.firm = firm;
+			this.bank=bank;
 	}
 
 	public double getBalance() {

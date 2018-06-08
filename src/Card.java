@@ -9,6 +9,7 @@ public abstract class Card {
 		this.person=person;
 		this.cardNumber=z+y;
 		this.balance=0;
+		this.bank=bank;
 		
 			
 	}
