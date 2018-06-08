@@ -7,8 +7,10 @@ public class LogData {
 		this.bank=card.getBank();
 		this.amount=amount;
 		Date date = new Date();
-		
 	}
+
+		
+
 	
 	private Firm firm;
 	private Bank bank;
