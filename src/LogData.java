@@ -1,5 +1,6 @@
+import java.io.Serializable;
 import java.util.*;
-public class LogData {
+public class LogData implements  Serializable {
 	
 	LogData(Firm firm, Card card, double amount){
 		this.firm=firm;
@@ -9,9 +10,7 @@ public class LogData {
 		Date date = new Date();
 	}
 
-		
 
-	
 	private Firm firm;
 	private Bank bank;
 	private int cardNumber;

@@ -1,14 +1,15 @@
 
+import java.io.Serializable;
 import java.util.*;
 
-public class Center {
+public class Center implements Serializable  {
 
 	Center(){}
 	
 	private ArrayList<Bank> bankList = new ArrayList<Bank>(9);
 	private LinkedList<LogData> logDataList = new LinkedList<LogData>();
 	private LinkedList<Firm> firmList = new LinkedList<Firm>();
-	int bankSerialNumber=1;
+	private int  bankSerialNumber=1;
 	
 
 	public int getBankSerialNumber() {
@@ -37,7 +38,7 @@ public class Center {
 	public ArrayList<Bank> getBanks(){
 		return bankList;
 	}
-	public List<LogData> getLogData(){
+	public LinkedList<LogData> getLogData(){
 		return logDataList;
 	}
 	//autorize do przerobienia

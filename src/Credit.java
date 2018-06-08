@@ -1,5 +1,6 @@
+import java.io.Serializable;
 
-public class Credit extends Card {
+public class Credit extends Card  implements  Serializable{
 	Credit(Person person, Bank bank)
 	{
 		super(person,bank);

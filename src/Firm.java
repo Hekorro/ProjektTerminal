@@ -1,6 +1,7 @@
+import java.io.Serializable;
 import java.util.*;
 
-public abstract class Firm {
+public abstract class Firm  implements  Serializable{
 
 	Firm(){}
 	Firm(String firmName){

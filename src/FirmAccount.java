@@ -1,5 +1,7 @@
+import java.io.Serializable;
+
 //zastanowic sie jak w klasie Card i FirmACCOUNT ogarnac zmienna bank ("zaimportowac")
-public class FirmAccount {
+public class FirmAccount implements  Serializable {
 
 	private Firm firm;
 	private double balance;

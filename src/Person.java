@@ -1,5 +1,6 @@
+import java.io.Serializable;
 import java.util.*;
-public class Person {
+public class Person implements  Serializable{
 
 	Person(){}
 	Person(String firstName,String lastName){
@@ -8,6 +9,13 @@ public class Person {
 	}
 	
 	private String firstName,lastName;
+	public String getFirstName() {
+		return firstName;
+	}
+	public String getLastName() {
+		return lastName;
+	}
+
 	private LinkedList<Bank> bankList = new LinkedList<Bank>();
 	private LinkedList<Card> cardList = new LinkedList<Card>();
 	

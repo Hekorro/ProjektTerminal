@@ -1,6 +1,6 @@
+import java.io.Serializable;
 import java.util.*;
-//asdasdasdasdasdasdasdasdasd
-public class Bank {
+public class Bank implements Serializable {
 
 	Bank(){}
 	Bank(String bankName,Center center){
