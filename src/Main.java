@@ -92,11 +92,7 @@ public class Main {
 				ArrayList<Bank> banksLoaded = centerLoaded.getBanks();
 				is2.close();
 				for(Bank k:banksLoaded) {
-					 List<Card> cardsLoaded= k.getCards();
-					 for(Card c:cardsLoaded)
-					 {
-						 System.out.println(k.getBankName()+ c.getCardNumber()+"\n");
-					 }	
+					 System.out.println(k.getBankName());
 				}			
 				} catch (FileNotFoundException e) {
 				// TODO Auto-generated catch block
