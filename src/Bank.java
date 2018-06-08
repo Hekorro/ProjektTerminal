@@ -87,20 +87,9 @@ private LinkedList<Integer> cardNumberList = new LinkedList<Integer>();
 		firmAccount=null;
 	}
 	
-	//klasa confirmAutorization do glebszego przetworzenia
-	public boolean confirmAutorization(Card card, double amount)
-	{
-		if(card.withdraw(amount)==false)
-		{
-			return false;
-		}
-		else
-		{
-			card.withdraw(amount);
-			return true;
-		}
+
 		
-	}
+
 	
 	//podobnie klasa confirmAutorization
 	public boolean confirmAutorization(Card card,FirmAccount firmAccount,double amount)

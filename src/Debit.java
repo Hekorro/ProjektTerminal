@@ -1,4 +1,5 @@
 
 public class Debit extends Card {
-private double limit=0.0;
+	super(person,bank)
+	private double limit=0.0;
 }

@@ -1,6 +1,6 @@
 import java.util.*;
 
-public class Firm {
+public abstract class Firm {
 
 	Firm(){}
 	Firm(String firmName){
@@ -18,9 +18,7 @@ public class Firm {
 		return firmName;
 	}
 	
-	public boolean callAutorization(Card card, double amount,Center center) {
-		return center.autorize(card, amount);
-	}
+
 	public boolean callAutorization(Card card,FirmAccount firmAccount,double amount,Center center) {
 		return center.autorize(card, firmAccount, amount);
 	}

@@ -1,6 +1,15 @@
 import java.util.*;
 public class LogData {
-
+	
+	LogData(Firm firm, Card card, double amount){
+		this.firm=firm;
+		this.owner=card.getPerson();
+		this.bank=card.getBank();
+		this.amount=amount;
+		Date date = new Date();
+		
+	}
+	
 	private Firm firm;
 	private Bank bank;
 	private int cardNumber;

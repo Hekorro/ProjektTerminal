@@ -6,7 +6,7 @@ public class Center {
 	Center(){}
 	
 	private ArrayList<Bank> bankList = new ArrayList<Bank>(9);
-	private LinkedList<Date> logDataList = new LinkedList<Date>();
+	private LinkedList<LogData> logDataList = new LinkedList<LogData>();
 	private LinkedList<Firm> firmList = new LinkedList<Firm>();
 	int bankSerialNumber=1;
 	
@@ -23,7 +23,10 @@ public class Center {
 	public void addFirm(Firm firm) {
 		firmList.add(firm);
 	}
-	public void addToLogBase(Card card, double amount, Date date) {}
+	public void addToLogBase(LogData logData) {
+		logDataList.add(logData);
+		
+	}
 	public void deleteBank(Bank bank) {
 		bankList.remove(bank);
 		bank=null;
@@ -35,14 +38,11 @@ public class Center {
 	public ArrayList<Bank> getBanks(){
 		return bankList;
 	}
-	public List<Date> getLogData(){
+	public List<LogData> getLogData(){
 		return logDataList;
 	}
 	//autorize do przerobienia
-	public boolean autorize(Card card, double amount) {
-		Bank bankToAutorize = card.getBank();
-		return bankToAutorize.confirmAutorization(card, amount);
-	}
+	
 	public boolean autorize(Card card,FirmAccount firmAccount,double amount) {
 		Bank bankToAutorize = card.getBank();
 		return bankToAutorize.confirmAutorization(card, firmAccount, amount);

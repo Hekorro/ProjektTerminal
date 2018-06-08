@@ -1,5 +1,5 @@
 
-public class Card {
+public abstract class Card {
 
 	Card(){}
 	Card(Person person,Bank bank){
@@ -50,7 +50,7 @@ public class Card {
 		else return false;
 		
 	}
-//trzeba stworzyc obsluge wyjatkow dla amount<0 i balance<0
+/*trzeba stworzyc obsluge wyjatkow dla amount<0 i balance<0
 	public boolean withdraw(double amount) {
 		if(balance-amount>0)
 		{
@@ -64,6 +64,6 @@ public class Card {
 		}
 		
 	}
-
+*/
 
 }
