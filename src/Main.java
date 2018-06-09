@@ -37,12 +37,10 @@ public class Main {
 		mBank.addPerson(adasko);
 		Card debitCard1 = new Debit(adasko,mBank);
 		mBank.addPersonsCard(debitCard1);
-		System.out.println(debitCard1.getCardNumber());
-		mBank.addPersonsCard(debitCard);
 		
+		/*
 		
-		LinkedList<LogData> logsToAdd = new LinkedList<LogData>();
-		logsToAdd=center.getLogData();
+
 		
 		String fileName = "logs.bin";
 			try {
@@ -57,8 +55,10 @@ public class Main {
 			
 			System.out.println("Done writing");
 			
+			LinkedList<LogData> logsToAdd = new LinkedList<LogData>();
+			String fileName = "logs.bin";
 			try {
-				ObjectInputStream is =new ObjectInputStream(new FileInputStream(fileName));
+				ObjectInputStream is =new ObjectInputStream(new FileInputStream("logs.bin"));
 				for(LogData x:logsToAdd)
 				{
 					System.out.println(x.getAmount());				}
@@ -70,7 +70,7 @@ public class Main {
 				e.printStackTrace();
 			}
 			
-			
+			/*
 			String fileName2 = "data.bin";
 			try {
 				ObjectOutputStream os2 = new ObjectOutputStream(new FileOutputStream(fileName2));
@@ -84,8 +84,11 @@ public class Main {
 				e.printStackTrace();
 			}
 			
-			System.out.println("Done writing app data");
 			
+			System.out.println("Done writing app data");
+			*/
+			/*
+			String fileName2 = "data.bin";
 			try {
 				ObjectInputStream is2 =  new ObjectInputStream(new FileInputStream(fileName2));
 				Center centerLoaded = (Center) is2.readObject();
@@ -104,8 +107,8 @@ public class Main {
 				// TODO Auto-generated catch block
 				e.printStackTrace();
 			}
+			*/
 			
-
-
+			
 }
 }

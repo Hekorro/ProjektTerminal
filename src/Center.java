@@ -43,7 +43,7 @@ public class Center implements Serializable  {
 	}
 	//autorize do przerobienia
 	
-	public boolean autorize(Card card,FirmAccount firmAccount,double amount) {
+	public LogData autorize(Card card,FirmAccount firmAccount,double amount) {
 		Bank bankToAutorize = card.getBank();
 		return bankToAutorize.confirmAutorization(card, firmAccount, amount);
 	}

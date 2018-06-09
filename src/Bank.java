@@ -92,13 +92,18 @@ private LinkedList<Integer> cardNumberList = new LinkedList<Integer>();
 
 	
 	//podobnie klasa confirmAutorization
-	public boolean confirmAutorization(Card card,FirmAccount firmAccount,double amount)
+	public LogData confirmAutorization(Card card,FirmAccount firmAccount,double amount)
 	{
 		if(card.pay(amount, firmAccount)==true)
 		{
-		return true;
+		LogData logData=new LogData(firmAccount.getFirm(),card,amount, 1);
+		return logData;
 		}
-		else return false;
+		else
+		{
+			LogData logData=new LogData(firmAccount.getFirm(),card,amount, 0);
+			return logData;
+		}
 		
 	}
 

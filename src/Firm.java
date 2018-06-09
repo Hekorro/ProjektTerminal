@@ -20,8 +20,9 @@ public abstract class Firm  implements  Serializable{
 	}
 	
 
-	public boolean callAutorization(Card card,FirmAccount firmAccount,double amount,Center center) {
-		return center.autorize(card, firmAccount, amount);
+	public void callAutorization(Card card,FirmAccount firmAccount,double amount,Center center) {
+		LogData logData=center.autorize(card, firmAccount, amount);
+		center.addToLogBase(logData);
 	}
 	public List<Bank> getBanks()
 	{

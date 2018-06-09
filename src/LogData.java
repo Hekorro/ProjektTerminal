@@ -2,15 +2,23 @@ import java.io.Serializable;
 import java.util.*;
 public class LogData implements  Serializable {
 	
-	LogData(Firm firm, Card card, double amount){
+	LogData(Firm firm, Card card, double amount,int x){
 		this.firm=firm;
 		this.owner=card.getPerson();
 		this.bank=card.getBank();
 		this.amount=amount;
 		Date date = new Date();
+		if(x==1)
+		{
+			this.result="Zautoryzowano";
+		}
+		if(x==0)
+		{
+			this.result="Odrzucono";
+		}
 	}
 
-
+	private String result;
 	private Firm firm;
 	private Bank bank;
 	private int cardNumber;
