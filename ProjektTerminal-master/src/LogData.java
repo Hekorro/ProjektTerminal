@@ -5,14 +5,13 @@ import javax.sound.midi.Soundbank;
 public class LogData implements  Serializable {
 	
 	LogData(Firm firm, Card card, double amount, int x){
-		this.firm=firm;
-		this.owner=card.getPerson();
-		this.bank=card.getBank();
+		this.firm=firm.getFirmName();
+		this.ownerFirstName=card.getPerson().getFirstName();
+		this.ownerLastName=card.getPerson().getLastName();
+		this.bank=card.getBank().getBankName();
 		this.amount=amount;
 		Date date = new Date();
-		
 		this.date= date;
-		//System.out.println(this.date);
 		this.cardNumber=card.getCardNumber();
 		if (x==1)
 		{
@@ -22,23 +21,37 @@ public class LogData implements  Serializable {
 		{
 			result="odrzucono";
 		}
-		
-	}
+	}	
+	
+	LogData(String firm, String bank, int cardNumber, String ownerFirstName, String ownerLastName, double amount)
+			{
+				this.firm=firm;
+				this.bank=bank;
+				this.cardNumber=cardNumber;
+				this.ownerFirstName=ownerFirstName;
+				this.ownerLastName=ownerLastName;
+				this.amount=amount;
+				Date date = new Date();
+				this.date= date;
+			}
+	
+	
 
 
-	private Firm firm;
-	private Bank bank;
+	private String firm;
+	private String bank;
 	private int cardNumber;
-	private Person owner;
+	private String ownerFirstName;
+	private String ownerLastName;
 	private double amount;
 	private Date date;
 	private String result;
 
-public Firm getFirm()
+public String getFirm()
 {
 	return firm;
 }
-public Bank getBank()
+public String getBank()
 {
 	return bank;
 }
@@ -46,9 +59,13 @@ public int getCardNumber()
 {
 	return cardNumber;
 }
-public Person getOwner()
+public String getOwnerFirstName()
 {
-	return owner;
+	return ownerFirstName;
+}
+public String getOwnerLastName()
+{
+	return ownerLastName;
 }
 public double getAmount()
 {
@@ -62,5 +79,11 @@ public String getResult()
 {
 	return result;
 }
+
+public String toString() 
+{
+	return firm+" "+bank+" "+cardNumber+" "+ownerFirstName+" "+ownerLastName+" "+amount+" "+date+" "+ result;
+}
+
 
 }

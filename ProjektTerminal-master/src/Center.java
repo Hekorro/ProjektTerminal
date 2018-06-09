@@ -56,7 +56,104 @@ public class Center implements Serializable  {
 			return false;
 		}
 		}
-	public void search(LogData logData, String string) {}
+	public void search(String firm, String bank, int cardNumber, String ownerFirstName, String ownerLastName, double amount,boolean How) {
+		LogData log =  new LogData(firm, bank, cardNumber, ownerFirstName, ownerLastName, amount);
+		LinkedList<LogData> logDataListTemp = new LinkedList<LogData>();
+		logDataListTemp=logDataList;
+		if (How==true)
+		{
+			 for (LogData x:logDataListTemp)
+			 {
+				 //System.out.println(x.toString()); 
+				 boolean ok = false;
+				
+				 if (log.getFirm().equalsIgnoreCase(x.getFirm()))
+				 {
+					 ok= true;
+				 }
+				 if (log.getBank().equalsIgnoreCase(x.getBank()))
+				 {
+					 
+					 ok= true;
+				 }
+				 if (log.getCardNumber()==x.getCardNumber())
+				 {
+					 
+					 ok= true;
+				 }
+				 if (log.getOwnerFirstName().equalsIgnoreCase(x.getOwnerFirstName()))
+				 {
+					 
+					 ok= true;
+				 }
+				 if (log.getOwnerLastName().equalsIgnoreCase(x.getOwnerLastName()))
+				 {
+					 
+					 ok= true;
+				 }
+				 if (log.getAmount()==x.getAmount())
+				 {
+					 
+					 ok= true;
+				 }
+				 if (ok==true)
+					 System.out.println(x.toString());
+					 
+			 }
+		}
+				 
+				 else {
+					 System.out.println("elo");
+					 for (LogData y:logDataListTemp)
+					 {
+						boolean ok = true;
+						if (log.getFirm()!="" )
+							 if(!log.getFirm().equalsIgnoreCase(y.getFirm()) )
+						 {
+								ok=false;
+							
+						 }
+						 if ( log.getBank()!="" )
+							 if(!log.getBank().equalsIgnoreCase(y.getBank()) )
+						 {
+							ok=false;
+							}
+						 if (log.getCardNumber()!=0)
+							 if(log.getCardNumber()!=y.getCardNumber())
+						 {
+							
+							ok=false;	
+						 }
+						 if (log.getOwnerFirstName()!="")
+							 if(!log.getOwnerFirstName().equalsIgnoreCase(y.getOwnerFirstName()))
+						 {
+							 
+							 ok=false;
+							 
+						 }
+						 if (log.getOwnerLastName()!="")
+							 if(!log.getOwnerLastName().equalsIgnoreCase(y.getOwnerLastName()))
+						 {
+							ok=false;
+						 }
+						 if (log.getAmount()!=0.0)
+							 if(log.getAmount()!=y.getAmount())
+						 {
+							 ok=false; 
+						 }
+						 	if (ok==true)
+						System.out.println(y.toString());					 
+					 }
+					 }
+					
+					
+					 
+				 	
+	}
+	
+			 	
+			
+	
 	public void browseBank() {
 		for(Bank bank:bankList)
 		{
